@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/loginPageTitle"
+        android:gravity="center"
+        android:textSize="29sp"
+        android:textColor="#000"
+        android:textStyle="bold"
+        android:layout_marginTop="85dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Login Page" />
+
+
+    <EditText
+        android:id="@+id/editOrgId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textSize="14sp"
+        android:layout_marginTop="25dp"
+        android:allowClickWhenDisabled="false"
+        android:background="@drawable/bg_edittext_focused"
+        android:inputType="textPersonName"
+        android:hint="Organization ID: 152640" />
+
+    <EditText
+        android:id="@+id/editUsername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textSize="14sp"
+        android:layout_marginTop="7dp"
+        android:background="@drawable/bg_edittext_focused"
+        android:inputType="textPersonName"
+        android:hint="Username" />
+
+
+    <EditText
+        android:id="@+id/editPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:padding="10dp"
+        android:textSize="14sp"
+        android:background="@drawable/bg_edittext_focused"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/loginButton"
+        android:layout_width="160dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:textSize="17sp"
+        android:textAllCaps="false"
+        android:text="Login" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/dontHaveAccountButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:textColor="#2884D5"
+        android:textAllCaps="false"
+        android:background="@drawable/no_acct_button"
+        android:text="Don't have account ? Register Here" />
+
+</LinearLayout>
