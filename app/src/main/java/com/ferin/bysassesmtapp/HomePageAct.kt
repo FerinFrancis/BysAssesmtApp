@@ -1,5 +1,6 @@
 package com.ferin.bysassesmtapp
 
+import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,6 +10,7 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AlertDialog
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 
@@ -64,5 +66,12 @@ class HomePageAct : AppCompatActivity() {
     fun signOut(item: MenuItem) {
         val goToLoginPage = Intent(this,MainActivity::class.java)
         startActivity(goToLoginPage)
+    }
+
+    override fun onBackPressed() {
+        val alertDialog = AlertDialog.Builder(this)
+        alertDialog.setMessage("Do you want to logout")
+        alertDialog.setNegativeButton("No",null).setPositiveButton("Yes", DialogInterface.OnClickListener { dialogInterface, i -> super.onBackPressed() }).show()
+
     }
 }

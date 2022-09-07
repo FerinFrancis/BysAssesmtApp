@@ -44,7 +44,7 @@ class RegistrationPageAct : AppCompatActivity() {
                 }
 
                 val alertDialog = AlertDialog.Builder(this)
-                alertDialog.setTitle("Registration Completed").setMessage("User details Saved. \nPlease login again to proceed")
+                alertDialog.setTitle("Registration Completed").setMessage("User details saved. \nPlease login again to proceed")
                 alertDialog.setPositiveButton("Proceed", DialogInterface.OnClickListener {
                         dialogInterface, i -> val toLoginPgIntent = Intent(this,MainActivity::class.java)
                         startActivity(toLoginPgIntent) })

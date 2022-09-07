@@ -30,8 +30,7 @@ class MainActivity : AppCompatActivity() {
 
         val sharedPref = getSharedPreferences("myPref", MODE_PRIVATE)
 
-//        editUsernameVar.setText(sharedPref.getString("regUserName","def val"))
-//        editPasswordVar.setText(sharedPref.getString("regPassWord","def val"))
+        editUsernameVar.setText(sharedPref.getString("regUserName","def val"))
 
         editOrgIdVar.isEnabled = false
 
