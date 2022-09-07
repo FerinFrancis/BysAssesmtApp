@@ -1,5 +1,6 @@
 package com.ferin.bysassesmtapp
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -27,7 +28,13 @@ class MainActivity : AppCompatActivity() {
         loginButtonVar = findViewById(R.id.loginButton)
         dontHaveAccountButtonVar = findViewById(R.id.dontHaveAccountButton)
 
+        val sharedPref = getSharedPreferences("myPref", MODE_PRIVATE)
+
+//        editUsernameVar.setText(sharedPref.getString("regUserName","def val"))
+//        editPasswordVar.setText(sharedPref.getString("regPassWord","def val"))
+
         editOrgIdVar.isEnabled = false
+
 
         loginButtonVar.setOnClickListener{
             val loginUserName = editUsernameVar.text.toString()
@@ -37,8 +44,13 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this,"Please enter the details",Toast.LENGTH_SHORT).show()
             }
             else{
-                val toHomePgIntent = Intent(this,HomePageAct::class.java)
-                startActivity(toHomePgIntent)
+                if(loginUserName == sharedPref.getString("regUserName",null) && loginPasswrd == sharedPref.getString("regPassWord",null)){
+                    val toHomePgIntent = Intent(this,HomePageAct::class.java)
+                    startActivity(toHomePgIntent)
+                }
+                else{
+                    Toast.makeText(this, "Please enter valid details",Toast.LENGTH_SHORT).show()
+                }
             }
         }
 
@@ -47,9 +59,10 @@ class MainActivity : AppCompatActivity() {
             startActivity(toRegPageIntent)
 
         }
+    }
 
-        val getUNamFrmRegistString = intent.getStringExtra("Username")
-        editUsernameVar.setText(getUNamFrmRegistString)
-
+    override fun onBackPressed() {
+        finishAffinity()
+        super.onBackPressed()
     }
 }

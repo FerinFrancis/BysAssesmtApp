@@ -1,8 +1,12 @@
 package com.ferin.bysassesmtapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.ContextMenu
+import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.drawerlayout.widget.DrawerLayout
@@ -50,5 +54,15 @@ class HomePageAct : AppCompatActivity() {
             return super.onOptionsItemSelected(item)
 
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.homepage_menu,menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    fun signOut(item: MenuItem) {
+        val goToLoginPage = Intent(this,MainActivity::class.java)
+        startActivity(goToLoginPage)
     }
 }

@@ -1,5 +1,7 @@
 package com.ferin.bysassesmtapp
 
+import android.content.Context
+import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,6 +9,7 @@ import android.text.TextUtils
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 
 class RegistrationPageAct : AppCompatActivity() {
 
@@ -22,6 +25,9 @@ class RegistrationPageAct : AppCompatActivity() {
         regPasswordEditVar = findViewById(R.id.regPasswordEdit)
         regSignupButtonVar = findViewById(R.id.regSignupButton)
 
+        val sharedPref = getSharedPreferences("myPref", MODE_PRIVATE)
+        val editor = sharedPref.edit()
+
         regSignupButtonVar.setOnClickListener{
             val regUserNameString = regUsernameEditVar.text.toString()
             val regPassString = regPasswordEditVar.text.toString()
@@ -30,9 +36,19 @@ class RegistrationPageAct : AppCompatActivity() {
                 Toast.makeText(this,"Please enter to proceed",Toast.LENGTH_SHORT).show()
             }
             else{
-                val toLoginPgIntent = Intent(this,MainActivity::class.java)
-                toLoginPgIntent.putExtra("Username",regUserNameString)
-                startActivity(toLoginPgIntent)
+
+                editor.apply{
+                    putString("regUserName",regUserNameString)
+                    putString("regPassWord",regPassString)
+                    apply()
+                }
+
+                val alertDialog = AlertDialog.Builder(this)
+                alertDialog.setTitle("Registration Completed").setMessage("User details Saved. \nPlease login again to proceed")
+                alertDialog.setPositiveButton("Proceed", DialogInterface.OnClickListener {
+                        dialogInterface, i -> val toLoginPgIntent = Intent(this,MainActivity::class.java)
+                        startActivity(toLoginPgIntent) })
+                alertDialog.setNegativeButton("Cancel",null).show()
             }
         }
 

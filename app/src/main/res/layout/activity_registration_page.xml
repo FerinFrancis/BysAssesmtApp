@@ -25,9 +25,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="14sp"
-        android:padding="10dp"
+        android:padding="12dp"
         android:background="@drawable/bg_edittext_focused"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="35dp"
         android:hint="Username"/>
 
     <EditText
@@ -35,7 +35,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="14sp"
-        android:padding="10dp"
+        android:padding="12dp"
         android:inputType="textPassword"
         android:background="@drawable/bg_edittext_focused"
         android:layout_marginTop="10dp"
@@ -45,7 +45,7 @@
         android:id="@+id/regSignupButton"
         android:layout_width="175dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="20dp"
         android:textSize="17sp"
         android:textAllCaps="false"
         android:layout_gravity="center"

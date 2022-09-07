@@ -3,4 +3,5 @@
     <string name="open">Open</string>
     <string name="close">Close</string>
     <string name="this_is_home_page">This is Home Page</string>
+    <string name="login_page">Login Page</string>
 </resources>
