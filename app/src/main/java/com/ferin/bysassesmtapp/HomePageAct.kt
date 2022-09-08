@@ -64,8 +64,7 @@ class HomePageAct : AppCompatActivity() {
     }
 
     fun signOut(item: MenuItem) {
-        val goToLoginPage = Intent(this,MainActivity::class.java)
-        startActivity(goToLoginPage)
+        finish()
     }
 
     override fun onBackPressed() {

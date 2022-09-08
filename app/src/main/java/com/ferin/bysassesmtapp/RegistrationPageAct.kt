@@ -33,7 +33,7 @@ class RegistrationPageAct : AppCompatActivity() {
             val regPassString = regPasswordEditVar.text.toString()
 
             if(TextUtils.isEmpty(regUserNameString)||TextUtils.isEmpty(regPassString)){
-                Toast.makeText(this,"Please enter to proceed",Toast.LENGTH_SHORT).show()
+                Toast.makeText(this,"Please fill details to proceed",Toast.LENGTH_SHORT).show()
             }
             else{
 
@@ -44,10 +44,8 @@ class RegistrationPageAct : AppCompatActivity() {
                 }
 
                 val alertDialog = AlertDialog.Builder(this)
-                alertDialog.setTitle("Registration Completed").setMessage("User details saved. \nPlease login again to proceed")
-                alertDialog.setPositiveButton("Proceed", DialogInterface.OnClickListener {
-                        dialogInterface, i -> val toLoginPgIntent = Intent(this,MainActivity::class.java)
-                        startActivity(toLoginPgIntent) })
+                alertDialog.setTitle("Registration Completed").setMessage("User details saved \nPlease login again to proceed")
+                alertDialog.setPositiveButton("Proceed", DialogInterface.OnClickListener { dialogInterface, i -> startActivity(Intent(this,MainActivity::class.java)) })
                 alertDialog.setNegativeButton("Cancel",null).show()
             }
         }

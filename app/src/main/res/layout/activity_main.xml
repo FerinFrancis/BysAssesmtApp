@@ -29,7 +29,7 @@
         android:allowClickWhenDisabled="false"
         android:background="@drawable/bg_edittext_focused"
         android:inputType="textPersonName"
-        android:text="Org ID: 152640" />
+        android:text="@string/org_id_152640" />
 
     <EditText
         android:id="@+id/editUsername"
@@ -40,7 +40,7 @@
         android:layout_marginTop="7dp"
         android:background="@drawable/bg_edittext_focused"
         android:inputType="textPersonName"
-        android:hint="Username" />
+        android:hint="@string/username" />
 
 
     <EditText
@@ -52,7 +52,7 @@
         android:textSize="16sp"
         android:background="@drawable/bg_edittext_focused"
         android:ems="10"
-        android:hint="Password"
+        android:hint="@string/password"
         android:inputType="textPassword" />
 
     <androidx.appcompat.widget.AppCompatButton
@@ -64,7 +64,7 @@
         android:layout_marginTop="20dp"
         android:textSize="17sp"
         android:textAllCaps="false"
-        android:text="Login" />
+        android:text="@string/login" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/dontHaveAccountButton"
@@ -74,6 +74,6 @@
         android:textColor="#2884D5"
         android:textAllCaps="false"
         android:background="@drawable/no_acct_button"
-        android:text="Don't have account ? Register Here" />
+        android:text="@string/don_t_have_account_register_here" />
 
 </LinearLayout>

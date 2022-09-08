@@ -4,4 +4,19 @@
     <string name="close">Close</string>
     <string name="this_is_home_page">This is Home Page</string>
     <string name="login_page">Login Page</string>
+    <string name="don_t_have_account_register_here">Don\'t have account ? Register Here</string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
+    <string name="username">Username</string>
+    <string name="org_id_152640">Org ID: 152640</string>
+    <string name="registration_page">Registration Page</string>
+    <string name="new_username">New Username</string>
+    <string name="new_password">New Password</string>
+    <string name="sign_up">Sign up</string>
+    <string name="home">Home</string>
+    <string name="notifications">Notifications</string>
+    <string name="settings">Settings</string>
+    <string name="communication">Communication</string>
+    <string name="about">About</string>
+    <string name="share">Share</string>
 </resources>

@@ -40,12 +40,11 @@ class MainActivity : AppCompatActivity() {
             val loginPasswrd = editPasswordVar.text.toString()
 
             if(TextUtils.isEmpty(loginUserName)||TextUtils.isEmpty(loginPasswrd)){
-                Toast.makeText(this,"Please enter the details",Toast.LENGTH_SHORT).show()
+                Toast.makeText(this,"Please enter login details",Toast.LENGTH_SHORT).show()
             }
             else{
                 if(loginUserName == sharedPref.getString("regUserName",null) && loginPasswrd == sharedPref.getString("regPassWord",null)){
-                    val toHomePgIntent = Intent(this,HomePageAct::class.java)
-                    startActivity(toHomePgIntent)
+                    startActivity(Intent(this,HomePageAct::class.java))
                 }
                 else{
                     Toast.makeText(this, "Please enter valid details",Toast.LENGTH_SHORT).show()
@@ -54,8 +53,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         dontHaveAccountButtonVar.setOnClickListener{
-            val toRegPageIntent = Intent(this, RegistrationPageAct::class.java)
-            startActivity(toRegPageIntent)
+            startActivity(Intent(this, RegistrationPageAct::class.java))
 
         }
     }
